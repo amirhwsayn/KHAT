@@ -26,7 +26,7 @@ SECRET_KEY = '0(+vc_y+nw7*lv2qh=tv#8jsc*#8dw)i6n^dy%59iuv2b@@h=g'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://khatmain.herokuapp.com/']
 
 # Application definition
 
@@ -86,9 +86,9 @@ DATABASES = {
     }
 }
 import dj_database_url
+
 db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
-
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
@@ -96,7 +96,6 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'noreplykhatauth@gmail.com'
 EMAIL_HOST_PASSWORD = 'amir1384'
-
 
 # REST_FRAMEWORK = {
 #     'EXCEPTION_HANDLER': 'KHATF.utils.custom_exception_handler'
