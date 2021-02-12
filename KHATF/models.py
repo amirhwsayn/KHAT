@@ -27,8 +27,8 @@ class Admin(Model):
     id = CharField(max_length=50, unique=True, primary_key=True)
     password = CharField(max_length=50)
     email = CharField(max_length=500)
-    name = CharField(max_length=100)
-    profilePicture = FileField(upload_to='Admins', verbose_name=get_random_string(50), blank=True,)
+    name = CharField(max_length=100, default=f"کاربر{get_random_string(6, allowed_chars='123456789')}")
+    profilePicture = FileField(upload_to='Admins', verbose_name=get_random_string(50), blank=True, )
     # Admin Related
     classes = ManyToManyField(Classes, blank=True)
 
